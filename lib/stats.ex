@@ -1,6 +1,6 @@
 require Integer
 
-defmodule Program do
+defmodule Stats do
   def mean(list) do
     Enum.sum(list) / Enum.count(list)
   end
@@ -24,8 +24,6 @@ defmodule Program do
     grouped = list
     |> Enum.group_by(&(&1))
     |> Enum.map(fn {key, value} -> {key, Enum.count(value)} end)
-
-
 
     max = grouped
     |> Enum.max_by(fn {k, v} -> v end)
