@@ -23,7 +23,7 @@ defmodule Stats do
   def mode(list) do
     grouped = list
     |> Enum.group_by(&(&1))
-    |> Enum.map(fn {key, value} -> {key, Enum.count(value)} end)
+    |> Enum.map(fn {k, v} -> {k, Enum.count(v)} end)
 
     max = grouped
     |> Enum.max_by(fn {k, v} -> v end)
@@ -31,7 +31,7 @@ defmodule Stats do
 
     grouped
     |> Enum.filter(fn {k, v} -> v == max end)
-    |> Enum.map(fn {k, v} -> k end)
-
+    |> Enum.map(fn {k, _v} -> k end)
+    |> Enum.sort
   end
 end
