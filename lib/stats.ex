@@ -56,6 +56,9 @@ defmodule Stats do
   def mode([]), do: []
 
   @doc """
+  Determines the mode of a list of numbers. More than one mode will be
+  returned if different data values appear at the same frequency.
+
   ## Parameters
     - list: A list of numbers
 
