@@ -84,4 +84,8 @@ defmodule Stats do
     |> Enum.map(fn {k, _v} -> k end)
     |> Enum.sort
   end
+
+  def range(list) when is_list(list) do
+    Enum.max(list) - Enum.min(list)
+  end
 end
