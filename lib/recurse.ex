@@ -13,9 +13,23 @@ defmodule Recurse do
     fib(n-1) + fib(n-2)
   end
 
+  def fib_all(1) do
+    [1]
+  end
+
+  def fib_all(n) do
+    Enum.concat(fib_all(n - 1), [fib(n)])
+  end
+
+  def fib(0, acc) do
+    [0]
+  end
+
   def factorial(1) do
      1
   end
+
+
 
   # factorial(4) = factorial(3) * 4 = 24
   # factorial(3) = factorial(2) * 3 = 6
