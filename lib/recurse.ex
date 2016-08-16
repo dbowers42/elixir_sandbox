@@ -10,7 +10,7 @@ defmodule Recurse do
   # fib(1) = 1
   # fib(0) = 0
   def fib(n) do
-    fib(n-1) + fib(n-2)
+    fib(n-1) + fib(n - 2)
   end
 
   def fib_all(1) do
@@ -29,13 +29,11 @@ defmodule Recurse do
      1
   end
 
-
-
   # factorial(4) = factorial(3) * 4 = 24
   # factorial(3) = factorial(2) * 3 = 6
   # factorial(2) = factorial(1) * 2 = 2
   # factorial(1) = 1
   def factorial(n) do
-    n * factorial(n-1)
+    n * factorial(n - 1)
   end
 end
