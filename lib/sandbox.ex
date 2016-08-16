@@ -12,7 +12,9 @@ defmodule Sandbox do
     items = [1, 2, 3]
 
     IO.puts "=== arangements ==="
-    Permutations.of_size(items, 2) |> IO.inspect
+    Permutations.of_size(items, 2) 
+    |> Enum.uniq
+    |> IO.inspect
     {:ok, self }
   end
 end

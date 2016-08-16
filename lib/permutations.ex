@@ -18,7 +18,7 @@ defmodule Permutations do
   end
 
   def of_size(list, size) do
-    for x <- list, y <- of_size(list, size - 1) do
+    for x <- list, y <- of_size(list -- [x], size - 1) do
      [x | y]
     end
   end
