@@ -15,7 +15,7 @@ defmodule Sandbox.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     [
-      mod: {Sandbox, ["firstname", "David", "lastname", "Bowers"]},
+      mod: {Sandbox, []},
       applications: [:logger]
     ]
   end
@@ -30,6 +30,6 @@ defmodule Sandbox.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:credo, "~> 0.4.11"}]
   end
 end
