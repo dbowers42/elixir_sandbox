@@ -1,5 +1,5 @@
 defmodule Student do
-  defstruct firstname: nil, lastname: nil, rank: 0
+  defstruct [:firstname, :lastname, :rank]
 
   def new(firstname, lastname, rank) do
     %Student{firstname: firstname, lastname: lastname, rank: rank}
