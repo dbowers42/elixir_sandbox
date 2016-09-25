@@ -4,9 +4,17 @@ defmodule Sandbox do
   use Application
 
   def start(_type, _args) do
-    [1.0,1.0,2.0,2,2.0,3.0,3.0,3.0]
-    |> Stats.mode
-    |> IO.inspect
+    students = [
+      Student.new("David", "Bowers", 1),
+      Student.new("Laura", "Devries", 2),
+      Student.new("Jeff", "Devries", 1),
+      Student.new("Karen", "Devries", 1)
+    ]
+
+    Stats.mean_by(students, &(&1.rank)) |> IO.inspect
+    Stats.median_by(students, &(&1.rank)) |> IO.inspect
+    Stats.mode_by(students, &(&1.rank)) |> IO.inspect
+
     {:ok, self }
   end
 end

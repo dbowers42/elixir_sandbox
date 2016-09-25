@@ -20,6 +20,12 @@ defmodule Stats do
     Enum.sum(list) / Enum.count(list)
   end
 
+  def mean_by(list, callback) when is_list(list) and is_function(callback) do
+    total = list
+    |> Enum.map(callback)
+    |> Stats.mean
+  end
+
   @doc """
     Determines the median value of a list of numbers. For an odd number of data
     points this is the middle value of or an ordered set of data points. For an
@@ -50,6 +56,12 @@ defmodule Stats do
       true ->
         Enum.at(sorted, index)
     end
+  end
+
+  def median_by(list, callback) when is_list(list) and is_function(callback) do
+    total = list
+    |> Enum.map(callback)
+    |> Stats.median
   end
 
 
@@ -85,7 +97,20 @@ defmodule Stats do
     |> Enum.sort
   end
 
+  def mode_by(list, callback) when is_list(list) and is_function(callback) do
+    total = list
+    |> IO.inspect
+    |> Enum.map(callback) |> IO.inspect
+    |> Stats.mode |> IO.inspect
+  end
+
   def range(list) when is_list(list) do
     Enum.max(list) - Enum.min(list)
+  end
+
+  def range_by(list, callback) when is_list(list) and is_function(callback) do
+    total = list
+    |> Enum.map(callback)
+    |> Stats.range
   end
 end

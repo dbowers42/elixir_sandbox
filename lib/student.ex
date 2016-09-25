@@ -1,8 +1,8 @@
 defmodule Student do
-  defstruct firstname: nil, lastname: nil
+  defstruct firstname: nil, lastname: nil, rank: 0
 
-  def new(firstname, lastname) do
-    %Student{firstname: firstname, lastname: lastname}
+  def new(firstname, lastname, rank) do
+    %Student{firstname: firstname, lastname: lastname, rank: rank}
   end
 
   def fullname(%Student{} = student) do
